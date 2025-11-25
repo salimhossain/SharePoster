@@ -1,0 +1,62 @@
+# ---------------------------------------
+# WordPress Plugin .gitignore
+# ---------------------------------------
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Node stuff
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Composer stuff
+vendor/
+composer.lock
+
+# Build artifacts
+/dist
+/build
+/asset-build
+*.map
+
+# Logs & runtime files
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+.claude
+.github
+.gemini
+
+# PHP tools
+.phpunit.result.cache
+phpunit.xml
+phpunit.xml.dist
+phpcs.xml
+phpcs.xml.dist
+
+# WP-specific
+# (Don't commit WordPress core or someone’s gonna cry.)
+wp-admin/
+wp-includes/
+wp-content/uploads/
+
+# Plugin build zips
+*.zip
+
+# Cache
+.sass-cache/
+.cache/
+gulp-cache/
+
+# Env files
+.env
+.env.local
+.env.*
+
+# Mac Finder metadata
+._*
