@@ -147,13 +147,13 @@ shareposter/
 │   ├── class-shareposter-admin.php
 │   ├── partials/
 │   │   └── shareposter-admin-display.php
+├── assets/                    # Shared assets
+│   └── images/
 │   ├── css/
 │   │   └── shareposter-admin.css
 │   └── js/
 │       ├── shareposter-admin.js
 │       └── html2canvas.min.js
-├── assets/                    # Shared assets
-│   └── images/
 └── languages/                 # Translation files
 ```
 
