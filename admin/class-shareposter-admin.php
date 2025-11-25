@@ -66,7 +66,7 @@ class SharePoster_Admin {
 		// Enqueue custom CSS.
 		wp_enqueue_style(
 			$this->plugin_name,
-			SHAREPOSTER_PLUGIN_URL . 'admin/css/shareposter-admin.css',
+			SHAREPOSTER_PLUGIN_URL . 'assets/css/shareposter-admin.css',
 			array(),
 			$this->version,
 			'all'
@@ -94,7 +94,7 @@ class SharePoster_Admin {
 		// Enqueue html2canvas.
 		wp_enqueue_script(
 			$this->plugin_name . '-html2canvas',
-			SHAREPOSTER_PLUGIN_URL . 'admin/js/html2canvas.min.js',
+			SHAREPOSTER_PLUGIN_URL . 'assets/js/html2canvas.min.js',
 			array(),
 			'1.4.1',
 			true
@@ -103,7 +103,7 @@ class SharePoster_Admin {
 		// Enqueue custom JS.
 		wp_enqueue_script(
 			$this->plugin_name,
-			SHAREPOSTER_PLUGIN_URL . 'admin/js/shareposter-admin.js',
+			SHAREPOSTER_PLUGIN_URL . 'assets/js/shareposter-admin.js',
 			array( 'jquery', 'wp-color-picker', $this->plugin_name . '-html2canvas' ),
 			$this->version,
 			true
