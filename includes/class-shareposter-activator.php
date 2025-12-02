@@ -28,7 +28,7 @@ class SharePoster_Activator {
 				'image_position'  => 'center center',
 				'text_color'      => '#000000',
 				'title_position'  => 'top',
-				'details'         => __( 'Learn More', 'shareposter' ),
+				'details'         => __( '•••• Details in Comments ••••', 'shareposter' ),
 			);
 			add_option( 'shareposter_settings', $defaults );
 		}

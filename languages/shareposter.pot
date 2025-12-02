@@ -1,0 +1,224 @@
+# Copyright (C) 2025 Salim Hossain
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: SharePoster - Social Image Generator 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/shareposter\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-12-02T14:25:12+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.13.0-alpha-fee1e09\n"
+"X-Domain: shareposter\n"
+
+#. Plugin Name of the plugin
+#: shareposter.php
+msgid "SharePoster - Social Image Generator"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: shareposter.php
+msgid "https://github.com/salimhossain/shareposter"
+msgstr ""
+
+#. Description of the plugin
+#: shareposter.php
+msgid "Instantly create 1200×1200 social media–ready posters from your WordPress posts — perfect for Facebook, Instagram, X (Twitter), and LinkedIn."
+msgstr ""
+
+#. Author of the plugin
+#: shareposter.php
+msgid "Salim Hossain"
+msgstr ""
+
+#. Author URI of the plugin
+#: shareposter.php
+msgid "https://github.com/salimhossain"
+msgstr ""
+
+#: admin/class-shareposter-admin.php:198
+#: admin/class-shareposter-admin.php:199
+#: admin/class-shareposter-admin.php:229
+#: admin/partials/shareposter-admin-display.php:21
+#: admin/partials/shareposter-admin-display.php:27
+msgid "SharePoster"
+msgstr ""
+
+#: admin/class-shareposter-admin.php:216
+msgid "Settings"
+msgstr ""
+
+#: admin/class-shareposter-admin.php:262
+msgid "Get SharePoster Image"
+msgstr ""
+
+#: admin/class-shareposter-admin.php:278
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: admin/class-shareposter-admin.php:344
+#: includes/class-shareposter-activator.php:31
+msgid "•••• Details in Comments ••••"
+msgstr ""
+
+#: admin/class-shareposter-admin.php:361
+#: admin/class-shareposter-admin.php:393
+msgid "Insufficient permissions"
+msgstr ""
+
+#: admin/class-shareposter-admin.php:379
+msgid "Settings saved successfully"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:38
+msgid "Editing Post:"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:39
+msgid "Post ID:"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:48
+msgid "Post Link"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:57
+msgid "Background"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:65
+msgid "Politics"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:67
+msgid "January 10, 2026"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:76
+msgid "Logo"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:86
+#: admin/partials/shareposter-admin-display.php:122
+msgid "Northern Lights set to dazzle UK once again tonight"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:91
+#: admin/partials/shareposter-admin-display.php:167
+msgid "Featured Image"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:109
+msgid "Background Image"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:110
+msgid "Upload Background Image"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:115
+msgid "All Text Color"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:120
+msgid "Heading Text"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:139
+msgid "Category/Topic"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:144
+msgid "Date"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:149
+msgid "Heading Font Size:"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:154
+msgid "Heading Line Height:"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:159
+msgid "Heading Position"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:161
+msgid "Top"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:162
+msgid "Bottom"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:168
+msgid "Upload Featured Image"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:173
+msgid "Featured Image Position"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:175
+msgid "Center Center"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:176
+msgid "Top Center"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:177
+msgid "Bottom Center"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:178
+msgid "Top Left"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:179
+msgid "Top Right"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:180
+msgid "Bottom Left"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:181
+msgid "Bottom Right"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:182
+msgid "Left Center"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:183
+msgid "Right Center"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:188
+msgid "Zoom Image:"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:193
+msgid "Details"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:198
+msgid "Website URL"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:205
+msgid "Save Settings"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:210
+msgid "Reset"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:218
+msgid "Download Poster"
+msgstr ""

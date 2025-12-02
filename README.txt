@@ -1,11 +1,11 @@
 === SharePoster ===
 Contributors: salimhossain
-Donate link: https://github.com/salimhossain
+Donate link: https://github.com/salimhossain/
 Tags: social media, poster, image generator, social sharing, facebook
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,7 +42,7 @@ SharePoster is a powerful WordPress plugin that transforms your blog posts into 
 = How It Works =
 
 1. Create or edit a WordPress post
-2. Click "Get SharePoster Poster" from the post editor sidebar
+2. Click "Get SharePoster Image" from the post editor sidebar
 3. Customize the poster with your preferred settings
 4. Download and share on social media
 
@@ -93,14 +93,14 @@ SharePoster is a powerful WordPress plugin that transforms your blog posts into 
 1. Go to SharePoster in your admin menu
 2. Configure default settings (background, colors, etc.)
 3. Create or edit a post
-4. Click "Get SharePoster Poster" from the sidebar meta box
+4. Click "Get SharePoster Image" from the sidebar meta box
 5. Customize and download your poster
 
 == Frequently Asked Questions ==
 
 = How do I create a poster for my post? =
 
-From the post editor, look for the "SharePoster" meta box in the sidebar. Click "Get SharePoster Poster" to open the poster generator.
+From the post editor, look for the "SharePoster" meta box in the sidebar. Click "Get SharePoster Image" to open the poster generator.
 
 = Can I customize the poster design? =
 
@@ -157,6 +157,11 @@ Yes! The plugin is licensed under GPL v2, which allows commercial use.
 7. Final poster example
 
 == Changelog ==
+
+= 1.0.1 - 2025-12-02 =
+* Fixed text domain and file references
+* Updated plugin structure
+* Enhanced code quality
 
 = 1.0.0 - 2024-01-15 =
 * Initial release

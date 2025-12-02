@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>" target="_blank" class="swp-d-flex swp-align-items-center goto-post">
 								<svg xmlns="http://www.w3.org/2000/svg" height="24" fill="none" viewBox="0 0 24 24">
 									<path stroke="#2271b1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 5H8.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C5 6.52 5 7.08 5 8.2v7.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h7.606c1.118 0 1.677 0 2.104-.218.377-.192.683-.498.875-.874.218-.428.218-.987.218-2.105V14m1-5V4m0 0h-5m5 0-7 7"/>
-								</svg> 
+								</svg>
 								<span><?php esc_html_e( 'Post Link', 'shareposter' ); ?></span>
 							</a>
 						</div>
@@ -61,11 +61,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<div class="swp-row">
 										<div class="swp-col-50 swp-d-flex swp-align-items-center">
 											<div class="swp-meta">
-												<span class="swp-fw-bold"><?php 
+												<span class="swp-fw-bold" id="swp-category"><?php
 													echo $post_category ? esc_html( $post_category ) : esc_html__( 'Politics', 'shareposter' );
-												?></span> | <?php 
+												?></span> | <span id="swp-date"><?php
 													echo $post_date ? esc_html( $post_date ) : esc_html__( 'January 10, 2026', 'shareposter' );
-												?>
+												?></span>
 											</div>
 										</div>
 										<div class="swp-poster-logo swp-col-50 swp-float-end">
@@ -129,17 +129,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 									'textarea_rows' => 4,
 									'media_buttons' => false,
 									'teeny'         => false,
-									'tinymce'       => array(
-										'toolbar1' => 'bold,italic,underline,separator,alignleft,aligncenter,alignright,separator,link,unlink,undo,redo',
-										'toolbar2' => 'forecolor,backcolor',
-										'toolbar3' => '',
-									),
 									'quicktags'     => false,
 								)
 							);
 							?>
 						</div>
-						
+
+						<div class="swp-controls-inner-item swp-mb-3">
+							<label for="post_category" class="swp-form-label swp-text-white"><?php esc_html_e( 'Category/Topic', 'shareposter' ); ?></label>
+							<input type="text" id="post_category" class="swp-form-control" placeholder="Politics" value="<?php echo esc_attr( $post_category ?: 'Politics' ); ?>">
+						</div>
+
+						<div class="swp-controls-inner-item swp-mb-3">
+							<label for="post_date" class="swp-form-label swp-text-white"><?php esc_html_e( 'Date', 'shareposter' ); ?></label>
+							<input type="text" id="post_date" class="swp-form-control" placeholder="January 10, 2026" value="<?php echo esc_attr( $post_date ?: 'January 10, 2026' ); ?>">
+						</div>
+
 						<div class="swp-controls-inner-item swp-mb-3">
 							<label for="swpAdjustFontSize" class="swp-form-label swp-text-white"><?php esc_html_e( 'Heading Font Size:', 'shareposter' ); ?> <span id="font_size_value">28</span>px</label>
 							<input type="range" class="swp-form-range" id="swpAdjustFontSize" min="10" max="50" value="28">

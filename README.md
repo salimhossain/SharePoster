@@ -86,7 +86,7 @@ wp plugin activate shareposter
    - Look for the "SharePoster" meta box in the sidebar
 
 2. **Generate Poster**
-   - Click **"Get SharePoster Poster"**
+   - Click **"Get SharePoster Image"**
    - The poster generator will open with your post data
 
 3. **Customize**
@@ -111,7 +111,7 @@ Navigate to **SharePoster** in your admin menu to set default values:
 'image_position'  => 'center center',
 'text_color'      => '#000000',
 'title_position'  => 'top',
-'details'         => 'Learn More'
+'details'         => '•••• Details in Comments ••••'
 ```
 
 #### Access Points

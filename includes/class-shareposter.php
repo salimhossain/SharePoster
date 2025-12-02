@@ -46,7 +46,7 @@ class SharePoster {
 		if ( defined( 'SHAREPOSTER_VERSION' ) ) {
 			$this->version = SHAREPOSTER_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.0.1';
 		}
 		$this->plugin_name = 'shareposter';
 

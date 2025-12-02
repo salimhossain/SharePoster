@@ -122,6 +122,69 @@ class SharePoster_Admin {
 				'plugin_url' => SHAREPOSTER_PLUGIN_URL,
 			)
 		);
+
+		// Enqueue TinyMCE plugins and configure toolbars.
+		add_filter( 'mce_external_plugins', array( $this, 'add_colorpicker_plugin' ) );
+		add_filter( 'mce_buttons', array( $this, 'configure_toolbar1' ) );
+		add_filter( 'mce_buttons_2', array( $this, 'configure_toolbar2' ) );
+	}
+
+	/**
+	 * Add TinyMCE plugins (colorpicker and charmap for special characters).
+	 *
+	 * @since    1.0.0
+	 * @param    array    $plugins    External plugins array.
+	 * @return   array                Modified plugins array.
+	 */
+	public function add_colorpicker_plugin( $plugins ) {
+		if ( ! isset( $plugins['colorpicker'] ) ) {
+			$plugins['colorpicker'] = includes_url( 'js/tinymce/plugins/colorpicker/plugin.min.js' );
+		}
+		if ( ! isset( $plugins['charmap'] ) ) {
+			$plugins['charmap'] = includes_url( 'js/tinymce/plugins/charmap/plugin.min.js' );
+		}
+		return $plugins;
+	}
+
+	/**
+	 * Configure TinyMCE toolbar 1 buttons.
+	 *
+	 * @since    1.0.0
+	 * @param    array    $buttons    Toolbar buttons array.
+	 * @return   array                Modified buttons array.
+	 */
+	public function configure_toolbar1( $buttons ) {
+		// Set only the desired buttons in toolbar 1.
+		return array(
+			'bold',
+			'italic',
+			'underline',
+			'separator',
+			'alignleft',
+			'aligncenter',
+			'alignright',
+			'separator',
+			'link',
+			'unlink',
+			'undo',
+			'redo'
+		);
+	}
+
+	/**
+	 * Configure TinyMCE toolbar 2 buttons.
+	 *
+	 * @since    1.0.0
+	 * @param    array    $buttons    Toolbar buttons array.
+	 * @return   array                Modified buttons array.
+	 */
+	public function configure_toolbar2( $buttons ) {
+		// Set only the desired buttons in toolbar 2.
+		return array(
+			'forecolor',
+			'backcolor',
+			'charmap'
+		);
 	}
 
 	/**
@@ -137,7 +200,7 @@ class SharePoster_Admin {
 			'edit_posts',
 			'shareposter',
 			array( $this, 'display_admin_page' ),
-			'dashicons-camera',
+			'dashicons-camera-alt',
 			30
 		);
 	}
@@ -196,7 +259,7 @@ class SharePoster_Admin {
 						<svg xmlns="http://www.w3.org/2000/svg" height="24" fill="none" viewBox="0 0 24 24">
 							<path stroke="#2271b1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 5H8.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C5 6.52 5 7.08 5 8.2v7.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h7.606c1.118 0 1.677 0 2.104-.218.377-.192.683-.498.875-.874.218-.428.218-.987.218-2.105V14m1-5V4m0 0h-5m5 0-7 7"/>
 						</svg>
-						<span><?php esc_html_e( 'Get SharePoster Poster', 'shareposter' ); ?></span>
+						<span><?php esc_html_e( 'Get SharePoster Image', 'shareposter' ); ?></span>
 					</a>
 				</div>
 			</div>
@@ -279,6 +342,8 @@ class SharePoster_Admin {
 			'text_color'      => '#000000',
 			'title_position'  => 'top',
 			'details'         => __( '•••• Details in Comments ••••', 'shareposter' ),
+			'post_category'   => 'Politics',
+			'post_date'       => 'January 10, 2026',
 		);
 	}
 
@@ -304,6 +369,8 @@ class SharePoster_Admin {
 			'text_color'      => isset( $_POST['text_color'] ) ? sanitize_hex_color( wp_unslash( $_POST['text_color'] ) ) : '#000000',
 			'title_position'  => isset( $_POST['title_position'] ) ? sanitize_text_field( wp_unslash( $_POST['title_position'] ) ) : 'top',
 			'details'         => isset( $_POST['details'] ) ? sanitize_text_field( wp_unslash( $_POST['details'] ) ) : '',
+			'post_category'   => isset( $_POST['post_category'] ) ? sanitize_text_field( wp_unslash( $_POST['post_category'] ) ) : 'Politics',
+			'post_date'       => isset( $_POST['post_date'] ) ? sanitize_text_field( wp_unslash( $_POST['post_date'] ) ) : 'January 10, 2026',
 		);
 
 		// Update option.

@@ -106,6 +106,16 @@
             $( '.swp-learn-more' ).text( $( this ).val() );
         } );
 
+        // Update category/topic preview.
+        $( '#post_category' ).on( 'input', function() {
+            $( '#swp-category' ).text( $( this ).val() || 'Politics' );
+        } );
+
+        // Update date preview.
+        $( '#post_date' ).on( 'input', function() {
+            $( '#swp-date' ).text( $( this ).val() || 'January 10, 2026' );
+        } );
+
         // Save All Settings Button.
         $( '#save_all_settings' ).on( 'click', function( e ) {
             e.preventDefault();
@@ -125,7 +135,9 @@
                     image_position: $( '#swp-picture-position' ).val(),
                     text_color: $( '#text_color' ).val(),
                     title_position: $( '#swp-title-position' ).val(),
-                    details: $( '#details' ).val()
+                    details: $( '#details' ).val(),
+                    post_category: $( '#post_category' ).val(),
+                    post_date: $( '#post_date' ).val()
                 },
                 success: function( response ) {
                     if ( response.success ) {
@@ -178,6 +190,8 @@
                         $( '#text_color' ).val( response.data.text_color );
                         $( '#swp-title-position' ).val( response.data.title_position );
                         $( '#details' ).val( response.data.details );
+                        $( '#post_category' ).val( response.data.post_category || 'Politics' );
+                        $( '#post_date' ).val( response.data.post_date || 'January 10, 2026' );
 
                         // Update color picker.
                         $( '.swp-text-color' ).wpColorPicker( 'color', response.data.text_color );
@@ -186,6 +200,8 @@
                         $( '#bg-preview-img' ).attr( 'src', response.data.bg_image_url );
                         $( '.swp-web-address' ).text( response.data.website_url );
                         $( '.swp-learn-more' ).text( response.data.details );
+                        $( '#swp-category' ).text( response.data.post_category || 'Politics' );
+                        $( '#swp-date' ).text( response.data.post_date || 'January 10, 2026' );
                         $( '#swp-pc-photo' ).css( 'object-position', response.data.image_position );
                         $( '#swp-heading' ).css( 'color', response.data.text_color );
 

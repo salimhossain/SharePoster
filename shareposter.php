@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: SharePoster Generator
- * Plugin URI: https://github.com/salimhossain/SharePoster
+ * Plugin Name: SharePoster - Social Image Generator
+ * Plugin URI: https://github.com/salimhossain/shareposter
  * Description: Instantly create 1200×1200 social media–ready posters from your WordPress posts — perfect for Facebook, Instagram, X (Twitter), and LinkedIn.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 5.0
  * Requires PHP: 7.2
  * Author: Salim Hossain
@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'SHAREPOSTER_VERSION', '1.0.0' );
+define( 'SHAREPOSTER_VERSION', '1.0.1' );
 
 /**
  * Define plugin constants.
