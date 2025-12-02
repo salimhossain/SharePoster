@@ -33,7 +33,7 @@ Whether you're a blogger, content marketer, or social media manager, SharePoster
   - Rich text formatting (bold, italic, underline, alignment)
   - Special characters support (©, ®, ™, €, and more)
 
-- **Metadata Control** ✨ NEW
+- **Metadata Control** NEW
   - Editable Category/Topic field for poster header
   - Editable Date field for poster header
   - Real-time live preview of metadata changes
