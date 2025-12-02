@@ -1,6 +1,6 @@
 # SharePoster
 
-![WordPress Plugin Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![WordPress Plugin Version](https://img.shields.io/badge/version-1.0.2-blue.svg)
 ![WordPress](https://img.shields.io/badge/wordpress-5.0%2B-blue.svg)
 ![PHP](https://img.shields.io/badge/php-7.2%2B-purple.svg)
 ![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)
@@ -20,15 +20,24 @@ Whether you're a blogger, content marketer, or social media manager, SharePoster
 - **🎭 Customizable Design** - Full control over colors, fonts, and layout
 - **🖼️ Background Images** - Upload custom backgrounds or use defaults
 - **📸 Featured Image Support** - Automatically includes post featured images
-- **📝 Rich Text Editor** - Edit heading text with formatting options
+- **📝 Rich Text Editor** - Edit heading text with formatting options and special characters
+- **🏷️ Metadata Control** - Edit category/topic and date for poster headers (NEW!)
 - **🎯 One-Click Download** - Download high-quality PNG posters instantly
 
 ### Customization Options
 - **Text Styling**
-  - Custom text colors
+  - Custom text colors with color picker
+  - Background color customization
   - Font size adjustment (10-50px)
   - Line height control (10-70px)
   - Rich text formatting (bold, italic, underline, alignment)
+  - Special characters support (©, ®, ™, €, and more)
+
+- **Metadata Control** ✨ NEW
+  - Editable Category/Topic field for poster header
+  - Editable Date field for poster header
+  - Real-time live preview of metadata changes
+  - Persistent settings (save/reset functionality)
 
 - **Layout Controls**
   - Heading position (top/bottom)
@@ -111,7 +120,9 @@ Navigate to **SharePoster** in your admin menu to set default values:
 'image_position'  => 'center center',
 'text_color'      => '#000000',
 'title_position'  => 'top',
-'details'         => '•••• Details in Comments ••••'
+'details'         => '•••• Details in Comments ••••',
+'post_category'   => 'Politics',
+'post_date'       => 'January 10, 2026'
 ```
 
 #### Access Points
@@ -214,6 +225,27 @@ git push origin feature/your-feature
 - Write clean, readable code
 
 ## 📝 Changelog
+
+### 1.0.1 - 2025-12-02
+
+#### Fixed
+- Text domain and file references for WordPress.org compliance
+- Plugin structure and architecture
+- Code quality and standards
+
+#### Improved
+- Better text editor toolbar organization
+- Improved color controls with dedicated buttons
+- Enhanced metadata field persistence (save/reset)
+- Better support for special characters in content
+
+#### Added ✨ NEW FEATURES
+- Editable Category/Topic field for poster header metadata
+- Editable Date field for poster header metadata
+- Real-time live preview for all metadata field changes
+- Special character (charmap) button to text editor toolbar
+- Forecolor and background color buttons to text editor
+- Enhanced TinyMCE configuration for better cross-site compatibility
 
 ### 1.0.0 - 2024-01-15
 

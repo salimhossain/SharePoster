@@ -21,14 +21,17 @@ SharePoster is a powerful WordPress plugin that transforms your blog posts into 
 * **Customizable Design** - Full control over colors, fonts, and layout
 * **Background Images** - Upload custom backgrounds or use defaults
 * **Featured Image Support** - Automatically includes post featured images
-* **Flexible Typography** - Adjust font size, line height, and color
+* **Flexible Typography** - Adjust font size, line height, and color with rich text editor
 * **Position Controls** - Place heading at top or bottom
 * **Image Positioning** - 9 different position options for featured images
 * **Zoom Controls** - Scale featured images from 10% to 500%
+* **Meta Information Control** - Edit category/topic and date for poster header
+* **Color Customization** - Text color and background color controls
 * **Branding** - Add your website URL and custom details
 * **Easy Download** - One-click download of high-quality posters
 * **Meta Box Integration** - Quick access from post editor sidebar
 * **Multiple Access Points** - Available in main menu, settings, and tools
+* **Persistent Settings** - Save and reset your default preferences
 
 = Perfect For =
 
@@ -48,15 +51,18 @@ SharePoster is a powerful WordPress plugin that transforms your blog posts into 
 
 = Customization Options =
 
-* Background image upload
-* Text color customization
-* Heading text editor with rich formatting
+* Background image upload and preview
+* Text color customization with color picker
+* Background color customization
+* Heading text editor with rich formatting and special characters
 * Font size adjustment (10-50px)
 * Line height control (10-70px)
 * Heading position (top/bottom)
-* Featured image upload
-* Image position (9 options)
+* Featured image upload and positioning
+* Image position (9 options: corners, center, sides)
 * Image zoom (10-500%)
+* Category/Topic editing for poster header
+* Date editing for poster header
 * Custom details text
 * Website URL display
 
@@ -142,6 +148,14 @@ Yes! The plugin is translation-ready and supports WordPress internationalization
 
 No! The plugin only loads resources on its admin pages and has minimal impact on performance.
 
+= Can I edit the category and date on the poster? =
+
+Yes! SharePoster includes editable Category/Topic and Date fields. You can customize these metadata fields to display any text you want on the poster header, and changes appear instantly in the live preview.
+
+= How do I add special characters to the heading? =
+
+Use the special character (Ω) button in the text editor toolbar. Click it to access a character map where you can select special characters like © ® ™ € and many more.
+
 = Can I use this for commercial purposes? =
 
 Yes! The plugin is licensed under GPL v2, which allows commercial use.
@@ -157,6 +171,16 @@ Yes! The plugin is licensed under GPL v2, which allows commercial use.
 7. Final poster example
 
 == Changelog ==
+
+= 1.0.2 - 2025-12-02 =
+* Added editable Category/Topic field for poster header
+* Added editable Date field for poster header with live preview
+* Implemented real-time live preview for all meta fields
+* Added special character (charmap) button to text editor toolbar
+* Enhanced text editor with forecolor and backcolor buttons
+* Improved TinyMCE toolbar configuration for cross-site compatibility
+* Added meta field persistence (save and reset functionality)
+* Meta fields now appear in both save and reset operations
 
 = 1.0.1 - 2025-12-02 =
 * Fixed text domain and file references
@@ -175,6 +199,12 @@ Yes! The plugin is licensed under GPL v2, which allows commercial use.
 * Translation ready
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+New feature! Add editable meta information (category and date) to your posters with live preview. Enhanced text editor with special character support and improved color controls.
+
+= 1.0.1 =
+Important update fixing text domain and plugin structure issues for WordPress.org compatibility.
 
 = 1.0.0 =
 Initial release of SharePoster. Install to start creating beautiful social media posters from your WordPress posts!
