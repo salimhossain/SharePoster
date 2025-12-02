@@ -1,1 +1,6 @@
-<?php // Silence is golden
+<?php
+/**
+ * SharePoster plugin index file.
+ *
+ * @package SharePoster
+ */

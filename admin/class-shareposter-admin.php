@@ -1,5 +1,11 @@
 <?php
 /**
+ * Admin-specific functionality for SharePoster.
+ *
+ * @package SharePoster
+ */
+
+/**
  * The admin-specific functionality of the plugin.
  *
  * Defines the plugin name, version, and hooks for admin area.
@@ -34,19 +40,19 @@ class SharePoster_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of this plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 	}
 
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
-	 * @param    string    $hook    The current admin page hook.
+	 * @param    string $hook    The current admin page hook.
 	 */
 	public function enqueue_styles( $hook ) {
 		// Only load on our plugin pages.
@@ -77,7 +83,7 @@ class SharePoster_Admin {
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
-	 * @param    string    $hook    The current admin page hook.
+	 * @param    string $hook    The current admin page hook.
 	 */
 	public function enqueue_scripts( $hook ) {
 		// Only load on our plugin pages.
@@ -123,68 +129,27 @@ class SharePoster_Admin {
 			)
 		);
 
-		// Enqueue TinyMCE plugins and configure toolbars.
-		add_filter( 'mce_external_plugins', array( $this, 'add_colorpicker_plugin' ) );
-		add_filter( 'mce_buttons', array( $this, 'configure_toolbar1' ) );
-		add_filter( 'mce_buttons_2', array( $this, 'configure_toolbar2' ) );
+		// Load TinyMCE plugins (colorpicker and charmap for special characters).
+		add_filter( 'mce_external_plugins', array( $this, 'add_tinymce_plugins' ) );
 	}
 
 	/**
-	 * Add TinyMCE plugins (colorpicker and charmap for special characters).
+	 * Load TinyMCE plugins.
 	 *
 	 * @since    1.0.0
-	 * @param    array    $plugins    External plugins array.
+	 * @param    array $plugins    External plugins array.
 	 * @return   array                Modified plugins array.
 	 */
-	public function add_colorpicker_plugin( $plugins ) {
+	public function add_tinymce_plugins( $plugins ) {
+		// Load colorpicker plugin for color button support.
 		if ( ! isset( $plugins['colorpicker'] ) ) {
 			$plugins['colorpicker'] = includes_url( 'js/tinymce/plugins/colorpicker/plugin.min.js' );
 		}
+		// Load charmap plugin for special character support.
 		if ( ! isset( $plugins['charmap'] ) ) {
 			$plugins['charmap'] = includes_url( 'js/tinymce/plugins/charmap/plugin.min.js' );
 		}
 		return $plugins;
-	}
-
-	/**
-	 * Configure TinyMCE toolbar 1 buttons.
-	 *
-	 * @since    1.0.0
-	 * @param    array    $buttons    Toolbar buttons array.
-	 * @return   array                Modified buttons array.
-	 */
-	public function configure_toolbar1( $buttons ) {
-		// Set only the desired buttons in toolbar 1.
-		return array(
-			'bold',
-			'italic',
-			'underline',
-			'separator',
-			'alignleft',
-			'aligncenter',
-			'alignright',
-			'separator',
-			'link',
-			'unlink',
-			'undo',
-			'redo'
-		);
-	}
-
-	/**
-	 * Configure TinyMCE toolbar 2 buttons.
-	 *
-	 * @since    1.0.0
-	 * @param    array    $buttons    Toolbar buttons array.
-	 * @return   array                Modified buttons array.
-	 */
-	public function configure_toolbar2( $buttons ) {
-		// Set only the desired buttons in toolbar 2.
-		return array(
-			'forecolor',
-			'backcolor',
-			'charmap'
-		);
 	}
 
 	/**
@@ -209,13 +174,13 @@ class SharePoster_Admin {
 	 * Add "Settings" link to plugin actions on the Plugins page.
 	 *
 	 * @since    1.0.0
-	 * @param    array    $links    Existing plugin action links.
+	 * @param    array $links    Existing plugin action links.
 	 * @return   array              Modified plugin action links.
 	 */
 	public function add_plugin_action_links( $links ) {
-	    $settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=shareposter' ) ) . '">' . esc_html__( 'Settings', 'shareposter' ) . '</a>';
-	    array_unshift( $links, $settings_link );
-	    return $links;
+		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=shareposter' ) ) . '">' . esc_html__( 'Settings', 'shareposter' ) . '</a>';
+		array_unshift( $links, $settings_link );
+		return $links;
 	}
 
 	/**
@@ -238,18 +203,17 @@ class SharePoster_Admin {
 	 * Render meta box content.
 	 *
 	 * @since    1.0.0
-	 * @param    WP_Post    $post    The post object.
+	 * @param    WP_Post $post    The post object (required by WordPress meta box callback).
 	 */
-	public function render_meta_box( $post ) {
+	public function render_meta_box( $post ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.Found
 		$post_id = get_the_ID();
-		// $post_url = 'admin.php?page=shareposter&p=' . intval( $post_id );
-		$url = add_query_arg(
-		    array(
-		        'page' => 'shareposter',
-		        'p'    => $post_id,
-		        '_wpnonce' => wp_create_nonce( 'shareposter_action' ),
-		    ),
-		    admin_url( 'admin.php' )
+		$url     = add_query_arg(
+			array(
+				'page'     => 'shareposter',
+				'p'        => $post_id,
+				'_wpnonce' => wp_create_nonce( 'shareposter_action' ),
+			),
+			admin_url( 'admin.php' )
 		);
 		?>
 		<div class="shareposter-meta-box-wrapper">
@@ -279,11 +243,10 @@ class SharePoster_Admin {
 		}
 
 		// Get post ID from URL parameter.
-		if (isset( $_GET['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'shareposter_action' ))
-		{
-		    $post_id = isset( $_GET['p'] ) ? absint( $_GET['p'] ) : 0;
+		if ( isset( $_GET['_wpnonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'shareposter_action' ) ) {
+			$post_id = isset( $_GET['p'] ) ? absint( $_GET['p'] ) : 0;
 		} else {
-		    $post_id = 0; // or handle error
+			$post_id = 0; // Or handle error.
 		}
 		$post_title         = '';
 		$featured_image_url = '';
@@ -336,14 +299,14 @@ class SharePoster_Admin {
 	 */
 	private function get_default_settings() {
 		return array(
-			'bg_image_url'    => SHAREPOSTER_PLUGIN_URL . 'assets/images/background.png',
-			'website_url'     => get_bloginfo( 'url' ),
-			'image_position'  => 'center center',
-			'text_color'      => '#000000',
-			'title_position'  => 'top',
-			'details'         => __( '•••• Details in Comments ••••', 'shareposter' ),
-			'post_category'   => 'Politics',
-			'post_date'       => 'January 10, 2026',
+			'bg_image_url'   => SHAREPOSTER_PLUGIN_URL . 'assets/images/background.png',
+			'website_url'    => get_bloginfo( 'url' ),
+			'image_position' => 'center center',
+			'text_color'     => '#000000',
+			'title_position' => 'top',
+			'details'        => __( '•••• Details in Comments ••••', 'shareposter' ),
+			'post_category'  => 'Politics',
+			'post_date'      => 'January 10, 2026',
 		);
 	}
 
@@ -363,14 +326,14 @@ class SharePoster_Admin {
 
 		// Sanitize and prepare settings.
 		$settings = array(
-			'bg_image_url'    => isset( $_POST['bg_image_url'] ) ? esc_url_raw( wp_unslash( $_POST['bg_image_url'] ) ) : '',
-			'website_url'     => isset( $_POST['website_url'] ) ? sanitize_text_field( wp_unslash( $_POST['website_url'] ) ) : '',
-			'image_position'  => isset( $_POST['image_position'] ) ? sanitize_text_field( wp_unslash( $_POST['image_position'] ) ) : 'center center',
-			'text_color'      => isset( $_POST['text_color'] ) ? sanitize_hex_color( wp_unslash( $_POST['text_color'] ) ) : '#000000',
-			'title_position'  => isset( $_POST['title_position'] ) ? sanitize_text_field( wp_unslash( $_POST['title_position'] ) ) : 'top',
-			'details'         => isset( $_POST['details'] ) ? sanitize_text_field( wp_unslash( $_POST['details'] ) ) : '',
-			'post_category'   => isset( $_POST['post_category'] ) ? sanitize_text_field( wp_unslash( $_POST['post_category'] ) ) : 'Politics',
-			'post_date'       => isset( $_POST['post_date'] ) ? sanitize_text_field( wp_unslash( $_POST['post_date'] ) ) : 'January 10, 2026',
+			'bg_image_url'   => isset( $_POST['bg_image_url'] ) ? esc_url_raw( wp_unslash( $_POST['bg_image_url'] ) ) : '',
+			'website_url'    => isset( $_POST['website_url'] ) ? sanitize_text_field( wp_unslash( $_POST['website_url'] ) ) : '',
+			'image_position' => isset( $_POST['image_position'] ) ? sanitize_text_field( wp_unslash( $_POST['image_position'] ) ) : 'center center',
+			'text_color'     => isset( $_POST['text_color'] ) ? sanitize_hex_color( wp_unslash( $_POST['text_color'] ) ) : '#000000',
+			'title_position' => isset( $_POST['title_position'] ) ? sanitize_text_field( wp_unslash( $_POST['title_position'] ) ) : 'top',
+			'details'        => isset( $_POST['details'] ) ? sanitize_text_field( wp_unslash( $_POST['details'] ) ) : '',
+			'post_category'  => isset( $_POST['post_category'] ) ? sanitize_text_field( wp_unslash( $_POST['post_category'] ) ) : 'Politics',
+			'post_date'      => isset( $_POST['post_date'] ) ? sanitize_text_field( wp_unslash( $_POST['post_date'] ) ) : 'January 10, 2026',
 		);
 
 		// Update option.

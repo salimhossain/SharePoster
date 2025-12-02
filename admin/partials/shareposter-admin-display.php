@@ -1,6 +1,6 @@
 <?php
 /**
- * Provide a admin area view for the plugin
+ * Provide an admin area view for the plugin.
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
@@ -36,9 +36,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="swp-preview-link swp-d-flex swp-alert swp-alert-info swp-mb-3">
 						<div class="post-info">
 							<strong><?php esc_html_e( 'Editing Post:', 'shareposter' ); ?></strong> <?php echo esc_html( get_the_title( $post_id ) ); ?>
-							<br /><small><?php esc_html_e( 'Post ID:', 'shareposter' ); 
+							<br /><small>
+							<?php
+							esc_html_e( 'Post ID:', 'shareposter' );
 							echo absint( $post_id );
-							?></small>
+							?>
+							</small>
 						</div>
 						<div class="post-link">
 							<a href="<?php echo esc_url( get_permalink( $post_id ) ); ?>" target="_blank" class="swp-d-flex swp-align-items-center goto-post">
@@ -61,17 +64,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<div class="swp-row">
 										<div class="swp-col-50 swp-d-flex swp-align-items-center">
 											<div class="swp-meta">
-												<span class="swp-fw-bold" id="swp-category"><?php
+												<span class="swp-fw-bold" id="swp-category">
+												<?php
 													echo $post_category ? esc_html( $post_category ) : esc_html__( 'Politics', 'shareposter' );
-												?></span> | <span id="swp-date"><?php
+												?>
+												</span> | <span id="swp-date">
+												<?php
 													echo $post_date ? esc_html( $post_date ) : esc_html__( 'January 10, 2026', 'shareposter' );
-												?></span>
+												?>
+												</span>
 											</div>
 										</div>
 										<div class="swp-poster-logo swp-col-50 swp-float-end">
 											<?php
 											if ( get_custom_logo() ) {
-												echo esc_html(get_custom_logo());
+												echo esc_html( get_custom_logo() );
 											} else {
 												echo '<img class="swp-float-end" src="' . esc_url( SHAREPOSTER_PLUGIN_URL . 'assets/images/logo.svg' ) . '" alt="' . esc_attr__( 'Logo', 'shareposter' ) . '">';
 											}
@@ -81,15 +88,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 								</div>
 								<div class="swp-poster-body swp-d-flex swp-flex-column">
 									<h1 id="swp-heading" 
-										class="swp-order-<?php echo $saved_settings['title_position'] === 'bottom' ? '2' : '0'; ?>"
+										class="swp-order-<?php echo 'bottom' === $saved_settings['title_position'] ? '2' : '0'; ?>"
 										style="font-size: 28px; line-height: 36px; color: <?php echo esc_attr( $saved_settings['text_color'] ); ?>;">
-										<?php echo $post_title ? wp_kses_post( $post_title ) : esc_html__( 'Northern Lights set to dazzle UK once again tonight', 'shareposter' ); ?>
+										<?php echo ! empty( $post_title ) ? wp_kses_post( $post_title ) : esc_html__( 'Northern Lights set to dazzle UK once again tonight', 'shareposter' ); ?>
 									</h1>
-									<div class="swp-pc-photo swp-text-center swp-order-<?php echo $saved_settings['title_position'] === 'bottom' ? '0' : '2'; ?>">
+									<div class="swp-pc-photo swp-text-center swp-order-<?php echo 'bottom' === $saved_settings['title_position'] ? '0' : '2'; ?>">
 										<img id="swp-pc-photo" 
-											 src="<?php echo $featured_image_url ? esc_url( $featured_image_url ) : esc_url( SHAREPOSTER_PLUGIN_URL . 'assets/images/default-featured-image.webp' ); ?>" 
-											 alt="<?php esc_attr_e( 'Featured Image', 'shareposter' ); ?>"
-											 style="object-position: <?php echo esc_attr( $saved_settings['image_position'] ); ?>;">
+											src="<?php echo ! empty( $featured_image_url ) ? esc_url( $featured_image_url ) : esc_url( SHAREPOSTER_PLUGIN_URL . 'assets/images/default-featured-image.webp' ); ?>" 
+											alt="<?php esc_attr_e( 'Featured Image', 'shareposter' ); ?>"
+											style="object-position: <?php echo esc_attr( $saved_settings['image_position'] ); ?>;">
 									</div>
 								</div>
 								
@@ -120,7 +127,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<label for="heading_text" class="swp-form-label swp-text-white"><?php esc_html_e( 'Heading Text', 'shareposter' ); ?></label>
 							<?php
 							$shareposter_default_content = $post_title ? $post_title : __( 'Northern Lights set to dazzle UK once again tonight', 'shareposter' );
-							
+
 							wp_editor(
 								$shareposter_default_content,
 								'heading_text',
@@ -130,6 +137,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 									'media_buttons' => false,
 									'teeny'         => false,
 									'quicktags'     => false,
+									'tinymce'       => array(
+										'toolbar1' => 'bold,italic,underline,separator,alignleft,aligncenter,alignright,separator,link,unlink,undo,redo',
+										'toolbar2' => 'forecolor,backcolor,charmap',
+										'toolbar3' => false,
+										'toolbar4' => false,
+									),
 								)
 							);
 							?>
@@ -137,12 +150,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<div class="swp-controls-inner-item swp-mb-3">
 							<label for="post_category" class="swp-form-label swp-text-white"><?php esc_html_e( 'Category/Topic', 'shareposter' ); ?></label>
-							<input type="text" id="post_category" class="swp-form-control" placeholder="Politics" value="<?php echo esc_attr( $post_category ?: 'Politics' ); ?>">
+							<input type="text" id="post_category" class="swp-form-control" placeholder="Politics" value="<?php echo esc_attr( ! empty( $post_category ) ? $post_category : 'Politics' ); ?>">
 						</div>
 
 						<div class="swp-controls-inner-item swp-mb-3">
 							<label for="post_date" class="swp-form-label swp-text-white"><?php esc_html_e( 'Date', 'shareposter' ); ?></label>
-							<input type="text" id="post_date" class="swp-form-control" placeholder="January 10, 2026" value="<?php echo esc_attr( $post_date ?: 'January 10, 2026' ); ?>">
+							<input type="text" id="post_date" class="swp-form-control" placeholder="January 10, 2026" value="<?php echo esc_attr( ! empty( $post_date ) ? $post_date : 'January 10, 2026' ); ?>">
 						</div>
 
 						<div class="swp-controls-inner-item swp-mb-3">
@@ -166,7 +179,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="swp-controls-inner-item swp-mb-3 uploads-dl">
 							<label for="upload_featured_image" class="swp-form-label swp-text-white"><?php esc_html_e( 'Featured Image', 'shareposter' ); ?></label>
 							<input type="button" id="upload_featured_image" class="button button-primary swp-w-100" value="<?php esc_attr_e( 'Upload Featured Image', 'shareposter' ); ?>">
-							<input type="hidden" id="featured_image_url" value="<?php echo $featured_image_url ? esc_url( $featured_image_url ) : ''; ?>">
+							<input type="hidden" id="featured_image_url" value="<?php echo ! empty( $featured_image_url ) ? esc_url( $featured_image_url ) : ''; ?>">
 						</div>
 						
 						<div class="swp-controls-inner-item custom-select swp-mb-3">

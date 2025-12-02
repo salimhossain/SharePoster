@@ -16,5 +16,5 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 // Delete plugin settings from database.
 delete_option( 'shareposter_settings' );
 
-// For site options in Multisite
+// For site options in Multisite.
 delete_site_option( 'shareposter_settings' );

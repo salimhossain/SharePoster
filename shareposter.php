@@ -1,5 +1,11 @@
 <?php
 /**
+ * Main plugin bootstrap file.
+ *
+ * @package SharePoster
+ */
+
+/**
  * Plugin Name: SharePoster - Social Image Generator
  * Plugin URI: https://github.com/salimhossain/shareposter
  * Description: Instantly create 1200×1200 social media–ready posters from your WordPress posts — perfect for Facebook, Instagram, X (Twitter), and LinkedIn.
@@ -16,7 +22,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-    die;
+	die;
 }
 
 /**
@@ -35,16 +41,16 @@ define( 'SHAREPOSTER_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
  * The code that runs during plugin activation.
  */
 function shareposter_activate() {
-    require_once SHAREPOSTER_PLUGIN_DIR . 'includes/class-shareposter-activator.php';
-    SharePoster_Activator::activate();
+	require_once SHAREPOSTER_PLUGIN_DIR . 'includes/class-shareposter-activator.php';
+	SharePoster_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  */
 function shareposter_deactivate() {
-    require_once SHAREPOSTER_PLUGIN_DIR . 'includes/class-shareposter-deactivator.php';
-    SharePoster_Deactivator::deactivate();
+	require_once SHAREPOSTER_PLUGIN_DIR . 'includes/class-shareposter-deactivator.php';
+	SharePoster_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'shareposter_activate' );
@@ -60,7 +66,7 @@ require SHAREPOSTER_PLUGIN_DIR . 'includes/class-shareposter.php';
  * Begins execution of the plugin.
  */
 function shareposter_run() {
-    $plugin = new SharePoster();
-    $plugin->run();
+	$plugin = new SharePoster();
+	$plugin->run();
 }
 shareposter_run();

@@ -1,1 +1,6 @@
-<?php // Silence is golden
+<?php
+/**
+ * Admin area index for SharePoster.
+ *
+ * @package SharePoster
+ */

@@ -2,6 +2,12 @@
 /**
  * Fired during plugin deactivation.
  *
+ * @package SharePoster
+ */
+
+/**
+ * Fired during plugin deactivation.
+ *
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @link       https://github.com/salimhossain

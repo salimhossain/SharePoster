@@ -1,5 +1,11 @@
 <?php
 /**
+ * Core SharePoster class.
+ *
+ * @package SharePoster
+ */
+
+/**
  * The file that defines the core plugin class
  *
  * @link       https://github.com/salimhossain
@@ -43,11 +49,7 @@ class SharePoster {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'SHAREPOSTER_VERSION' ) ) {
-			$this->version = SHAREPOSTER_VERSION;
-		} else {
-			$this->version = '1.0.1';
-		}
+		$this->version     = defined( 'SHAREPOSTER_VERSION' ) ? SHAREPOSTER_VERSION : '1.0.1';
 		$this->plugin_name = 'shareposter';
 
 		$this->load_dependencies();
@@ -88,11 +90,11 @@ class SharePoster {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu' );
-		// Plugin action links
+		// Plugin action links.
 		$this->loader->add_filter( 'plugin_action_links_' . SHAREPOSTER_PLUGIN_BASENAME, $plugin_admin, 'add_plugin_action_links' );
 		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_meta_box' );
 
-		// AJAX actions
+		// AJAX actions.
 		$this->loader->add_action( 'wp_ajax_shareposter_save_settings', $plugin_admin, 'save_settings' );
 		$this->loader->add_action( 'wp_ajax_shareposter_reset_settings', $plugin_admin, 'reset_settings' );
 	}

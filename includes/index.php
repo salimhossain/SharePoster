@@ -1,1 +1,6 @@
-<?php // Silence is golden
+<?php
+/**
+ * SharePoster includes loader index.
+ *
+ * @package SharePoster
+ */
