@@ -49,7 +49,7 @@ class SharePoster {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		$this->version     = defined( 'SHAREPOSTER_VERSION' ) ? SHAREPOSTER_VERSION : '1.0.1';
+		$this->version     = defined( 'SHAREPOSTER_VERSION' ) ? SHAREPOSTER_VERSION : '1.0.3';
 		$this->plugin_name = 'shareposter';
 
 		$this->load_dependencies();

@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Salim Hossain
+# Copyright (C) 2026 Salim Hossain
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: SharePoster - Social Image Generator 1.0.1\n"
+"Project-Id-Version: SharePoster - Social Image Generator 1.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/shareposter\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-02T14:25:12+00:00\n"
+"POT-Creation-Date: 2026-05-20T13:56:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.13.0-alpha-fee1e09\n"
 "X-Domain: shareposter\n"
@@ -39,37 +39,37 @@ msgstr ""
 msgid "https://github.com/salimhossain"
 msgstr ""
 
-#: admin/class-shareposter-admin.php:198
-#: admin/class-shareposter-admin.php:199
-#: admin/class-shareposter-admin.php:229
+#: admin/class-shareposter-admin.php:165
+#: admin/class-shareposter-admin.php:166
+#: admin/class-shareposter-admin.php:196
 #: admin/partials/shareposter-admin-display.php:21
 #: admin/partials/shareposter-admin-display.php:27
 msgid "SharePoster"
 msgstr ""
 
-#: admin/class-shareposter-admin.php:216
+#: admin/class-shareposter-admin.php:183
 msgid "Settings"
 msgstr ""
 
-#: admin/class-shareposter-admin.php:262
+#: admin/class-shareposter-admin.php:228
 msgid "Get SharePoster Image"
 msgstr ""
 
-#: admin/class-shareposter-admin.php:278
+#: admin/class-shareposter-admin.php:244
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: admin/class-shareposter-admin.php:344
-#: includes/class-shareposter-activator.php:31
+#: admin/class-shareposter-admin.php:310
+#: includes/class-shareposter-activator.php:38
 msgid "•••• Details in Comments ••••"
 msgstr ""
 
-#: admin/class-shareposter-admin.php:361
-#: admin/class-shareposter-admin.php:393
+#: admin/class-shareposter-admin.php:327
+#: admin/class-shareposter-admin.php:360
 msgid "Insufficient permissions"
 msgstr ""
 
-#: admin/class-shareposter-admin.php:379
+#: admin/class-shareposter-admin.php:346
 msgid "Settings saved successfully"
 msgstr ""
 
@@ -77,148 +77,154 @@ msgstr ""
 msgid "Editing Post:"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:39
+#: admin/partials/shareposter-admin-display.php:41
 msgid "Post ID:"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:48
+#: admin/partials/shareposter-admin-display.php:51
 msgid "Post Link"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:57
+#: admin/partials/shareposter-admin-display.php:60
 msgid "Background"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:65
+#: admin/partials/shareposter-admin-display.php:69
 msgid "Politics"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:67
+#: admin/partials/shareposter-admin-display.php:73
 msgid "January 10, 2026"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:76
+#: admin/partials/shareposter-admin-display.php:81
+#: admin/partials/shareposter-admin-display.php:85
+#: admin/partials/shareposter-admin-display.php:124
 msgid "Logo"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:86
-#: admin/partials/shareposter-admin-display.php:122
+#: admin/partials/shareposter-admin-display.php:95
+#: admin/partials/shareposter-admin-display.php:137
 msgid "Northern Lights set to dazzle UK once again tonight"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:91
-#: admin/partials/shareposter-admin-display.php:167
+#: admin/partials/shareposter-admin-display.php:100
+#: admin/partials/shareposter-admin-display.php:188
 msgid "Featured Image"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:109
+#: admin/partials/shareposter-admin-display.php:118
 msgid "Background Image"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:110
+#: admin/partials/shareposter-admin-display.php:119
 msgid "Upload Background Image"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:115
+#: admin/partials/shareposter-admin-display.php:125
+msgid "Upload Logo"
+msgstr ""
+
+#: admin/partials/shareposter-admin-display.php:130
 msgid "All Text Color"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:120
+#: admin/partials/shareposter-admin-display.php:135
 msgid "Heading Text"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:139
+#: admin/partials/shareposter-admin-display.php:160
 msgid "Category/Topic"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:144
+#: admin/partials/shareposter-admin-display.php:165
 msgid "Date"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:149
+#: admin/partials/shareposter-admin-display.php:170
 msgid "Heading Font Size:"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:154
+#: admin/partials/shareposter-admin-display.php:175
 msgid "Heading Line Height:"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:159
+#: admin/partials/shareposter-admin-display.php:180
 msgid "Heading Position"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:161
+#: admin/partials/shareposter-admin-display.php:182
 msgid "Top"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:162
+#: admin/partials/shareposter-admin-display.php:183
 msgid "Bottom"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:168
+#: admin/partials/shareposter-admin-display.php:189
 msgid "Upload Featured Image"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:173
+#: admin/partials/shareposter-admin-display.php:194
 msgid "Featured Image Position"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:175
+#: admin/partials/shareposter-admin-display.php:196
 msgid "Center Center"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:176
+#: admin/partials/shareposter-admin-display.php:197
 msgid "Top Center"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:177
+#: admin/partials/shareposter-admin-display.php:198
 msgid "Bottom Center"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:178
+#: admin/partials/shareposter-admin-display.php:199
 msgid "Top Left"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:179
+#: admin/partials/shareposter-admin-display.php:200
 msgid "Top Right"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:180
+#: admin/partials/shareposter-admin-display.php:201
 msgid "Bottom Left"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:181
+#: admin/partials/shareposter-admin-display.php:202
 msgid "Bottom Right"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:182
+#: admin/partials/shareposter-admin-display.php:203
 msgid "Left Center"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:183
+#: admin/partials/shareposter-admin-display.php:204
 msgid "Right Center"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:188
+#: admin/partials/shareposter-admin-display.php:209
 msgid "Zoom Image:"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:193
+#: admin/partials/shareposter-admin-display.php:214
 msgid "Details"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:198
+#: admin/partials/shareposter-admin-display.php:219
 msgid "Website URL"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:205
+#: admin/partials/shareposter-admin-display.php:226
 msgid "Save Settings"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:210
+#: admin/partials/shareposter-admin-display.php:231
 msgid "Reset"
 msgstr ""
 
-#: admin/partials/shareposter-admin-display.php:218
+#: admin/partials/shareposter-admin-display.php:239
 msgid "Download Poster"
 msgstr ""

@@ -30,6 +30,7 @@ class SharePoster_Activator {
 		if ( ! get_option( 'shareposter_settings' ) ) {
 			$defaults = array(
 				'bg_image_url'   => SHAREPOSTER_PLUGIN_URL . 'assets/images/background.png',
+				'logo_url'       => '',
 				'website_url'    => get_bloginfo( 'url' ),
 				'image_position' => 'center center',
 				'text_color'     => '#000000',

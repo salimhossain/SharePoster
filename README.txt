@@ -1,19 +1,21 @@
-=== SharePoster ===
+=== SharePoster - Social Image Generator ===
 Contributors: salimhossain
 Donate link: https://github.com/salimhossain/
 Tags: social media, poster, image generator, social sharing, facebook
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9.4
 Requires PHP: 7.2
-Stable tag: 1.0.1
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Create beautiful, professional social media posters automatically from your WordPress posts with customizable designs.
+Create beautiful, professional social media posters (PhotoCard) automatically from your WordPress posts with customizable designs.
 
 == Description ==
 
 SharePoster is a powerful WordPress plugin that transforms your blog posts into eye-catching social media posters. Perfect for sharing on Facebook, Instagram, Twitter, and other social platforms.
+
+SharePoster is a powerful WordPress plugin that transforms your blog posts into eye-catching photo cards and social media posters. Perfect for creating post-to-photo cards for social media and sharing across Facebook, Instagram, Twitter/X, and other social platforms.
 
 = Key Features =
 
@@ -172,6 +174,10 @@ Yes! The plugin is licensed under GPL v2, which allows commercial use.
 
 == Changelog ==
 
+= 1.0.3 - 2026-05-20 =
+* Added custom logo uploader for poster branding
+* Custom uploaded logo now replaces the site/custom fallback logo in poster preview
+
 = 1.0.2 - 2025-12-02 =
 * Added editable Category/Topic field for poster header
 * Added editable Date field for poster header with live preview
@@ -199,6 +205,9 @@ Yes! The plugin is licensed under GPL v2, which allows commercial use.
 * Translation ready
 
 == Upgrade Notice ==
+
+= 1.0.3 =
+Adds a custom logo uploader for SharePoster poster branding.
 
 = 1.0.2 =
 New feature! Add editable meta information (category and date) to your posters with live preview. Enhanced text editor with special character support and improved color controls.

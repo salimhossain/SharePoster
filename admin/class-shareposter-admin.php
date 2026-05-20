@@ -123,9 +123,11 @@ class SharePoster_Admin {
 			$this->plugin_name,
 			'shareposter_data',
 			array(
-				'ajax_url'   => admin_url( 'admin-ajax.php' ),
-				'nonce'      => wp_create_nonce( 'shareposter_nonce' ),
-				'plugin_url' => SHAREPOSTER_PLUGIN_URL,
+				'ajax_url'         => admin_url( 'admin-ajax.php' ),
+				'nonce'            => wp_create_nonce( 'shareposter_nonce' ),
+				'plugin_url'       => SHAREPOSTER_PLUGIN_URL,
+				'custom_logo'      => get_custom_logo(),
+				'default_logo_url' => SHAREPOSTER_PLUGIN_URL . 'assets/images/logo.svg',
 			)
 		);
 
@@ -300,6 +302,7 @@ class SharePoster_Admin {
 	private function get_default_settings() {
 		return array(
 			'bg_image_url'   => SHAREPOSTER_PLUGIN_URL . 'assets/images/background.png',
+			'logo_url'       => '',
 			'website_url'    => get_bloginfo( 'url' ),
 			'image_position' => 'center center',
 			'text_color'     => '#000000',
@@ -327,6 +330,7 @@ class SharePoster_Admin {
 		// Sanitize and prepare settings.
 		$settings = array(
 			'bg_image_url'   => isset( $_POST['bg_image_url'] ) ? esc_url_raw( wp_unslash( $_POST['bg_image_url'] ) ) : '',
+			'logo_url'       => isset( $_POST['logo_url'] ) ? esc_url_raw( wp_unslash( $_POST['logo_url'] ) ) : '',
 			'website_url'    => isset( $_POST['website_url'] ) ? sanitize_text_field( wp_unslash( $_POST['website_url'] ) ) : '',
 			'image_position' => isset( $_POST['image_position'] ) ? sanitize_text_field( wp_unslash( $_POST['image_position'] ) ) : 'center center',
 			'text_color'     => isset( $_POST['text_color'] ) ? sanitize_hex_color( wp_unslash( $_POST['text_color'] ) ) : '#000000',

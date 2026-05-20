@@ -77,10 +77,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 										</div>
 										<div class="swp-poster-logo swp-col-50 swp-float-end">
 											<?php
-											if ( get_custom_logo() ) {
-												echo esc_html( get_custom_logo() );
+											if ( ! empty( $saved_settings['logo_url'] ) ) {
+												echo '<img class="swp-float-end" id="swp-logo" src="' . esc_url( $saved_settings['logo_url'] ) . '" alt="' . esc_attr__( 'Logo', 'shareposter' ) . '">';
+											} elseif ( get_custom_logo() ) {
+												echo wp_kses_post( get_custom_logo() );
 											} else {
-												echo '<img class="swp-float-end" src="' . esc_url( SHAREPOSTER_PLUGIN_URL . 'assets/images/logo.svg' ) . '" alt="' . esc_attr__( 'Logo', 'shareposter' ) . '">';
+												echo '<img class="swp-float-end" id="swp-logo" src="' . esc_url( SHAREPOSTER_PLUGIN_URL . 'assets/images/logo.svg' ) . '" alt="' . esc_attr__( 'Logo', 'shareposter' ) . '">';
 											}
 											?>
 										</div>
@@ -116,6 +118,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<label for="bg_image_url" class="swp-form-label swp-text-white"><?php esc_html_e( 'Background Image', 'shareposter' ); ?></label>
 							<input type="button" id="upload_bg_image" class="button button-primary swp-w-100" value="<?php esc_attr_e( 'Upload Background Image', 'shareposter' ); ?>">
 							<input type="hidden" id="bg_image_url" value="<?php echo esc_url( $saved_settings['bg_image_url'] ); ?>">
+						</div>
+
+						<div class="swp-controls-inner-item swp-mb-3 uploads-dl">
+							<label for="upload_logo" class="swp-form-label swp-text-white"><?php esc_html_e( 'Logo', 'shareposter' ); ?></label>
+							<input type="button" id="upload_logo" class="button button-primary swp-w-100" value="<?php esc_attr_e( 'Upload Logo', 'shareposter' ); ?>">
+							<input type="hidden" id="logo_url" value="<?php echo esc_url( $saved_settings['logo_url'] ); ?>">
 						</div>
 						
 						<div class="swp-controls-inner-item swp-mb-3">

@@ -101,6 +101,23 @@
             } ).open();
         } );
 
+        // WordPress Media Uploader for Logo.
+        $( document ).on( 'click', '#upload_logo', function( e ) {
+            e.preventDefault();
+
+            const customUploader = wp.media( {
+                title: 'Select Logo',
+                button: {
+                    text: 'Use this image'
+                },
+                multiple: false
+            } ).on( 'select', function() {
+                const attachment = customUploader.state().get( 'selection' ).first().toJSON();
+                $( '#logo_url' ).val( attachment.url );
+                $( '.swp-poster-logo' ).html( '<img class="swp-float-end" id="swp-logo" src="' + attachment.url + '" alt="Logo">' );
+            } ).open();
+        } );
+
         // Update details preview.
         $( '#details' ).on( 'input', function() {
             $( '.swp-learn-more' ).text( $( this ).val() );
@@ -131,6 +148,7 @@
                     action: 'shareposter_save_settings',
                     nonce: shareposter_data.nonce,
                     bg_image_url: $( '#bg_image_url' ).val(),
+                    logo_url: $( '#logo_url' ).val(),
                     website_url: $( '#website_url' ).val(),
                     image_position: $( '#swp-picture-position' ).val(),
                     text_color: $( '#text_color' ).val(),
@@ -185,6 +203,7 @@
                     if ( response.success ) {
                         // Update form fields with default values.
                         $( '#bg_image_url' ).val( response.data.bg_image_url );
+                        $( '#logo_url' ).val( response.data.logo_url );
                         $( '#website_url' ).val( response.data.website_url );
                         $( '#swp-picture-position' ).val( response.data.image_position );
                         $( '#text_color' ).val( response.data.text_color );
@@ -198,6 +217,11 @@
 
                         // Update preview.
                         $( '#bg-preview-img' ).attr( 'src', response.data.bg_image_url );
+                        if ( shareposter_data.custom_logo ) {
+                            $( '.swp-poster-logo' ).html( shareposter_data.custom_logo );
+                        } else {
+                            $( '.swp-poster-logo' ).html( '<img class="swp-float-end" id="swp-logo" src="' + shareposter_data.default_logo_url + '" alt="Logo">' );
+                        }
                         $( '.swp-web-address' ).text( response.data.website_url );
                         $( '.swp-learn-more' ).text( response.data.details );
                         $( '#swp-category' ).text( response.data.post_category || 'Politics' );
