@@ -13,8 +13,6 @@ Create beautiful, professional social media posters (PhotoCard) automatically fr
 
 == Description ==
 
-SharePoster is a powerful WordPress plugin that transforms your blog posts into eye-catching social media posters. Perfect for sharing on Facebook, Instagram, Twitter, and other social platforms.
-
 SharePoster is a powerful WordPress plugin that transforms your blog posts into eye-catching photo cards and social media posters. Perfect for creating post-to-photo cards for social media and sharing across Facebook, Instagram, Twitter/X, and other social platforms.
 
 = Key Features =
