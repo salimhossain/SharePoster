@@ -1,4 +1,4 @@
-=== SharePoster - Social Image Generator ===
+=== SharePoster - Social Media Photo Card Generator ===
 Contributors: salimhossain
 Donate link: https://github.com/salimhossain/
 Tags: social media, poster, image generator, social sharing, facebook
